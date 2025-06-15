@@ -38,7 +38,7 @@ export default function HomeScreen({ navigation }) {
           const tokenResponse = await Notifications.getExpoPushTokenAsync();
           const pushToken = tokenResponse.data;
 
-          await axios.post('http://localhost:3001/send-alert', {
+          await axios.post('http://192.168.1.70:3001/send-alert', {
             pushToken,
             location: { latitude, longitude },
           });
